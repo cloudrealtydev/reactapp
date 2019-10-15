@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Packages to install
+
+Node.js, create-react-app, Yarn, Rsuite.js
+
 ## Available Scripts
 
 In the project directory, you can run:

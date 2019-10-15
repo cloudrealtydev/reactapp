@@ -1,69 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import 'rsuite/dist/styles/rsuite-default.css';
+import { Button } from 'rsuite';
+import { Placeholder } from 'rsuite';
+import { Divider } from 'rsuite';
 
+const { Paragraph } = Placeholder;
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()}
-  }
+class Header extends React.Component {
+    render() {
+        return(
+            <section>
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    );
-  }
-  
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date()
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-      </div>
-    );
-  }
-  
+            </section>
+        );
+    }
 }
 
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true***REMOVED***
-
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
+class App extends React.Component {
+    render() {
+      return (
+        <div className="App" style={{margin:30 + 'px'}}>
+            <Button appearance="primary"> Hello world </Button>
+            <Divider>Hello World!</Divider>
+            <p>Default:</p>
+            <Paragraph style={{marginTop:30}} />
+            <hr/>
+            <p>You can also add a round or square icon to the left:</p>
+            <Paragraph style={{marginTop:30}} graph='circle' />
+            <Paragraph style={{marginTop:30}} graph='square' />
+            <hr/>
+            <p>You can also customize the number of lines, spacing, etc.:</p>
+            <Paragraph style={{marginTop:30}} rows={5} graph active />
+        </div>
+      );
+    }
   }
 
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
-  }
-
-  render() {
-    return (
-      <div>
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
-      </div>
-    );
-  }
-}
-
-
-ReactDOM.render(<Clock />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
