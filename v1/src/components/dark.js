@@ -2,20 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
-import { Button, Badge } from 'rsuite';
+import { Button } from 'rsuite';
 import { Placeholder } from 'rsuite';
 import { Divider } from 'rsuite';
 import { Toggle } from 'rsuite';
 import { Input } from 'rsuite';
-import { Grid, Row, Col } from 'rsuite';
 
 const { Paragraph } = Placeholder;
+
+class Header extends React.Component {
+    render() {
+        return(
+            <section>
+                <h1>Toggle Change</h1>
+            </section>
+        );
+    }
+}
 
 class App extends React.Component {
 
     state = {
         success: false,
-        usuccess: false,
         username: "No Name",
     };
       
@@ -27,8 +35,7 @@ class App extends React.Component {
     nameupdate = f => {
         console.log(f);
         this.setState({ username: document.getElementById('username').value });
-        this.setState({usuccess: f});
-        console.log(f);
+        this.change(true);
     }
 
     render() {
@@ -36,18 +43,11 @@ class App extends React.Component {
         <div className="App" style={{margin:30 + 'px'}}>
             <Input style={{ width: 300 }, {marginBottom: 30 + 'px'}} placeholder="Your Name Here Please!" 
             id="username" onChange={this.nameupdate} />
-            <Col xs={12}>
-                <Button>
-                    Hello, {this.state.usuccess ? (this.state.username) : ("Stranger")}
-                </Button>
-            </Col>
-            <Col xs={12} fluid="true">
-                <div style={{float: "right"}}>
-                <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark"
-                onChange={this.change} />
-                {/* <div>{this.state.usuccess ? (this.state.username) : ("No Name")}</div> */}
-                </div>
-            </Col><br></br>
+            <Button appearance="primary"> Hello world </Button>
+            <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark" style={{marginLeft: 160}}
+             onChange={this.change} />
+            <div>{this.state.success ? (this.state.username) : (<p>Success is not yours</p>)}</div>
+            <Header />
             <Divider>Hello World!</Divider>
             <p>Default:</p>
             <Paragraph style={{marginTop:30}} />
