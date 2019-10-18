@@ -1,29 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
-import { Button } from 'rsuite';
+import { Button, Badge } from 'rsuite';
 import { Placeholder } from 'rsuite';
 import { Divider } from 'rsuite';
 import { Toggle } from 'rsuite';
 import { Input } from 'rsuite';
+import { Grid, Row, Col } from 'rsuite';
 
 const { Paragraph } = Placeholder;
 
-class Header extends React.Component {
-    render() {
-        return(
-            <section>
-                <h1>Toggle Change</h1>
-            </section>
-        );
-    }
-}
-
-class App extends React.Component {
+export class Dark extends React.Component {
 
     state = {
         success: false,
+        usuccess: false,
+        darkMode: false,
         username: "No Name",
     };
       
@@ -35,19 +26,31 @@ class App extends React.Component {
     nameupdate = f => {
         console.log(f);
         this.setState({ username: document.getElementById('username').value });
-        this.change(true);
+        this.setState({usuccess: f});
+        console.log(f);
     }
 
     render() {
       return (
         <div className="App" style={{margin:30 + 'px'}}>
+            <div>{this.state.success ? 
+            (<link rel="stylesheet" type="text/css" href='rsuite-dark.css'/>) : 
+            (<link rel="stylesheet" type="text/css" href='rsuite-default.css'/>)}
+            </div>
             <Input style={{ width: 300 }, {marginBottom: 30 + 'px'}} placeholder="Your Name Here Please!" 
             id="username" onChange={this.nameupdate} />
-            <Button appearance="primary"> Hello world </Button>
-            <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark" style={{marginLeft: 160}}
-             onChange={this.change} />
-            <div>{this.state.success ? (this.state.username) : (<p>Success is not yours</p>)}</div>
-            <Header />
+            
+            <Col xs={12}>
+                <Button>
+                    Hello, {this.state.usuccess ? (this.state.username) : ("Stranger")}
+                </Button>
+            </Col>
+            <Col xs={12} fluid="true">
+                <div style={{float: "right"}}>
+                    <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark"
+                    onChange={this.change} />
+                </div>
+            </Col><br></br>
             <Divider>Hello World!</Divider>
             <p>Default:</p>
             <Paragraph style={{marginTop:30}} />
@@ -62,10 +65,3 @@ class App extends React.Component {
       );
     }
 }
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

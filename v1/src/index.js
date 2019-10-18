@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from "react-helmet";
 import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
+/* import 'rsuite/dist/styles/rsuite-default.css'; */
 import { Button, Badge } from 'rsuite';
 import { Placeholder } from 'rsuite';
 import { Divider } from 'rsuite';
@@ -11,31 +13,35 @@ import { Grid, Row, Col } from 'rsuite';
 
 const { Paragraph } = Placeholder;
 
-class App extends React.Component {
+class Main extends React.Component {
 
     state = {
         success: false,
         usuccess: false,
+        darkMode: false,
         username: "No Name",
     };
       
     change = e => {
-        console.log(e);
         this.setState({ success: e });
     };
 
     nameupdate = f => {
-        console.log(f);
         this.setState({ username: document.getElementById('username').value });
         this.setState({usuccess: f});
-        console.log(f);
     }
 
     render() {
       return (
         <div className="App" style={{margin:30 + 'px'}}>
+            <Helmet>
+            {this.state.success ? 
+            (<link rel="stylesheet" type="text/css" href='http://localhost:3000/rsuite-default.min.css'/>) : 
+            (<link rel="stylesheet" type="text/css" href='http://localhost:3000/rsuite-dark.min.css'/>)}
+            </Helmet>
             <Input style={{ width: 300 }, {marginBottom: 30 + 'px'}} placeholder="Your Name Here Please!" 
             id="username" onChange={this.nameupdate} />
+            
             <Col xs={12}>
                 <Button>
                     Hello, {this.state.usuccess ? (this.state.username) : ("Stranger")}
@@ -43,9 +49,8 @@ class App extends React.Component {
             </Col>
             <Col xs={12} fluid="true">
                 <div style={{float: "right"}}>
-                <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark"
-                onChange={this.change} />
-                {/* <div>{this.state.usuccess ? (this.state.username) : ("No Name")}</div> */}
+                    <Toggle size="md" checkedChildren="Light" unCheckedChildren="Dark"
+                    onChange={this.change} />
                 </div>
             </Col><br></br>
             <Divider>Hello World!</Divider>
@@ -62,6 +67,21 @@ class App extends React.Component {
       );
     }
 }
+
+class App extends React.Component {
+
+    state = {
+        darkMode: false
+    };
+
+    render() {
+      return (
+        <Main />
+
+      );
+    }
+}
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
