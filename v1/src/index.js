@@ -36,8 +36,8 @@ class Main extends React.Component {
         <div className="App" style={{margin:30 + 'px'}}>
             <Helmet>
             {this.state.success ? 
-            (<link rel="stylesheet" type="text/css" href='http://localhost:3000/rsuite-default.min.css'/>) : 
-            (<link rel="stylesheet" type="text/css" href='http://localhost:3000/rsuite-dark.min.css'/>)}
+            (<link rel="stylesheet" type="text/css" href='/rsuite-default.min.css'/>) : 
+            (<link rel="stylesheet" type="text/css" href='/rsuite-dark.min.css'/>)}
             </Helmet>
             <Input style={{ width: 300 }, {marginBottom: 30 + 'px'}} placeholder="Your Name Here Please!" 
             id="username" onChange={this.nameupdate} />
