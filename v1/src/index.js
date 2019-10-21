@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Helmet} from "react-helmet";
 import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
+import './styles/custom.css'
+import {Header} from './components/header';
 /* import 'rsuite/dist/styles/rsuite-default.css'; */
 import { Button, Badge } from 'rsuite';
 import { Placeholder } from 'rsuite';
@@ -11,8 +13,6 @@ import { Toggle } from 'rsuite';
 import { Input } from 'rsuite';
 import { Grid, Row, Col } from 'rsuite';
 
-//home branch git test
-
 const { Paragraph } = Placeholder;
 
 class Main extends React.Component {
@@ -20,7 +20,6 @@ class Main extends React.Component {
     state = {
         success: false,
         usuccess: false,
-        darkMode: false,
         username: "No Name",
     ***REMOVED***
       
@@ -35,11 +34,12 @@ class Main extends React.Component {
 
     render() {
       return (
-        <div className="App" style={{margin:30 + 'px'}}>
+        <div className="App appmain">
+            <Header active="home"/>
             <Helmet>
             {this.state.success ? 
             (<link rel="stylesheet" type="text/css" href='/rsuite-default.min.css'/>) : 
-            (<link rel="stylesheet" type="text/css" href='/rsuite-dark.min.css'/>)}
+            (<meta name="author" content="cloudrealtydev" />)}
             </Helmet>
             <Input style={{ width: 300 }, {marginBottom: 30 + 'px'}} placeholder="Your Name Here Please!" 
             id="username" onChange={this.nameupdate} />

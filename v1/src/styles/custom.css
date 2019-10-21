@@ -1,0 +1,15 @@
+.appmain {
+    margin: 30px;
+    padding-left: 30px;
+}
+
+.verticalnav {
+    transform: translateX(-100%) rotate(-90deg);
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+    padding: calc(20px / 1.5) 10px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
