@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import {Helmet} from "react-helmet";
 import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
-import './styles/custom.css'
-import {Header} from './components/header';
-/* import 'rsuite/dist/styles/rsuite-default.css'; */
+import './styles/custom.css';
+import { Header } from './components/header';
 import { Button, Badge } from 'rsuite';
 import { Placeholder } from 'rsuite';
 import { Divider } from 'rsuite';
@@ -35,7 +34,7 @@ class Main extends React.Component {
     render() {
       return (
         <div className="App appmain">
-            <Header active="home"/>
+            <Header />
             <Helmet>
             {this.state.success ? 
             (<link rel="stylesheet" type="text/css" href='/rsuite-default.min.css'/>) : 
