@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 
-export class LazyLoadModule extends React.Component {
+export class Work2 extends React.Component {
   constructor(props) {
     super(props);
 
