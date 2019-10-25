@@ -1,47 +1,48 @@
 import React from 'react';
 import '../styles/custom.css'
-import { Icon } from 'evergreen-ui';
-import { Steps } from 'rsuite';
-import { Nav, Dropdown } from 'rsuite';
+import { Icon } from 'rsuite';
+import { Navbar } from 'rsuite';
+import Nav from "@rsuite/responsive-nav";
 
-const CustomNav = ({ active, onSelect, ...props }) => {
+const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
     return (
-      <Nav {...props} activeKey={active} onSelect={onSelect}>
-        <Nav.Item eventKey="contact">Contact</Nav.Item>
-        <Nav.Item eventKey="about">About</Nav.Item>
-        <Nav.Item eventKey="work">Work</Nav.Item>
-      </Nav>
+      <Navbar {...props}>
+        <Navbar.Body>
+          <Nav>
+          <Nav.Item eventKey="1"><Icon icon="creative" /></Nav.Item>
+          </Nav >
+          <Nav onSelect={onSelect} activeKey={activeKey} pullRight>
+            <Nav.Item eventKey="2">Hello World!</Nav.Item>
+            <Nav.Item eventKey="3">Work</Nav.Item>
+            <Nav.Item eventKey="4">Contact</Nav.Item>
+          </Nav>
+        </Navbar.Body>
+      </Navbar>
     );
 };
 
 export class Header extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-          active: 'work'
+          activeKey: '2'
         };
         this.handleSelect = this.handleSelect.bind(this);
     }
 
-    handleSelect(activeKey) {
-        this.setState({ active: activeKey });
+    handleSelect(eventKey) {
+        this.setState({ activeKey: eventKey });
     }
 
     render() {
-        const { active } = this.state;
+        const { activeKey } = this.state;
         return(
-            <div>
-                <Icon 
-            </div>
+            <section>
             <div className="verticalnav">
-            <CustomNav appearance="subtle" active={active} onSelect={this.handleSelect} />
-            {/* <Steps >
-                <Steps.Item title="Contact" />
-                <Steps.Item title="About" />
-                <Steps.Item title="Work" />
-            </Steps> */}
+            <NavBarInstance appearance="subtle" activeKey={activeKey} onSelect={this.handleSelect} />
             </div>
+            </section>
         );
     }
 }

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blueprintjs/icons": "^3.11.0",
+    "@rsuite/responsive-nav": "0.0.3",
     "evergreen-ui": "^4.19.3",
     "react": "^16.10.1",
     "react-ape": "0.0.81",

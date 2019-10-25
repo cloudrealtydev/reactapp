@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Packages to install
 
-Node.js, create-react-app, Yarn, Rsuite.js, react-helmet, Evergreen-ui
+Node.js, create-react-app, Yarn, Rsuite.js (++Responsive Nav), react-helmet, Evergreen-ui, Blueprintjs Icon package
 
 ## Available Scripts
 
