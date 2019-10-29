@@ -3,21 +3,33 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
 import './styles/custom.css';
-import { Header } from './components/header';
+import { Container, Header, Content, Footer } from 'rsuite';
+import { Head } from './components/header';
 import { Main } from './components/main';
+import { Foot } from './components/footer'
 
 
 class App extends React.Component {
 
     state = {
-        darkMode: false
+        darkMode: false,
+        page: '2'
     ***REMOVED***
 
     render() {
       return (
             <div className="App appmain">
-            <Header />
-            <Main />
+            <Container>
+                <Header>
+                    <Head activeKey={this.state.page} />
+                </Header>
+                <Content>
+                    <Main />
+                </Content>
+                <Footer>
+                    <Foot />
+                </Footer>
+            </Container>
             </div>
         );
     }
