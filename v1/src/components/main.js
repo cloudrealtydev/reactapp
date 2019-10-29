@@ -14,7 +14,7 @@ export class Main extends React.Component {
     state = {
         success: false,
         usuccess: false,
-        username: "No Name",
+        username: "No Name"
     };
       
     change = e => {

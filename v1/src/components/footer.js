@@ -21,12 +21,12 @@ const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
     );
 };
 
-export class Head extends React.Component {
+export class Foot extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          activeKey: this.props.activeKey
+          activeKey: '2'
         };
         this.handleSelect = this.handleSelect.bind(this);
     }
