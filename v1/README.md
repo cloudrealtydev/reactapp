@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Node.js, create-react-app, Yarn, Rsuite.js (++Responsive Nav), react-helmet, Evergreen-ui, Blueprintjs Icon package
 
+Prospecting Packages | [React-Getscreen](https://www.npmjs.com/package/react-getscreen)
+
 ## Available Scripts
 
 In the project directory, you can run:
