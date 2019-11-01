@@ -4,13 +4,14 @@
 }
 
 .verticalnav {
-    /* transform: translateX(-100%) rotate(-90deg);
-    -webkit-transform-origin: right top;
-    -ms-transform-origin: right top;
-    transform-origin: right top;
-    padding: calc(20px / 1.5) 10px;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 20%; */
+    visibility: visible;
 }
+
+.card {
+    padding: 30px;
+    max-width: 360px;
+    border-radius: 20px;
+    margin: 60px auto;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
