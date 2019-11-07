@@ -1,10 +1,7 @@
 import React from 'react';
 import '../styles/custom.css'
-import { Icon } from 'rsuite';
-import { Navbar, Nav } from 'rsuite';
-import { Col } from 'rsuite';
+import { Navbar, Nav, Toggle, Icon, Col } from 'rsuite';
 import {Helmet} from "react-helmet";
-import { Toggle } from 'rsuite';
 
 const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
     return (
@@ -19,6 +16,8 @@ const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
       </Navbar>
     );
 };
+
+export const theme = React.createContext();
 
 export class Head extends React.Component {
 

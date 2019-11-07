@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 import 'rsuite/dist/styles/rsuite-dark.css';
 import './styles/custom.css';
 import { Container, Header, Content, Footer } from 'rsuite';
-import { Head } from './components/header';
+import { Head, theme } from './components/header';
 import { Main } from './components/main';
 import { Foot } from './components/footer'
 
@@ -12,7 +12,6 @@ import { Foot } from './components/footer'
 class App extends React.Component {
 
     state = {
-        darkMode: false,
         page: '2'
     };
 
