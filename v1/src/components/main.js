@@ -15,13 +15,7 @@ export class Main extends React.Component {
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
-      }
-      close() {
-        this.setState({ show: false });
-      }
-      open() {
-        this.setState({ show: true });
-      }
+    }
 
     nameupdate = f => {
         this.setState({ username: document.getElementById('username').value });
@@ -29,7 +23,6 @@ export class Main extends React.Component {
     }
 
     render() {
-    const { backdrop, show } = this.state;
       return (
         <div>
           <h3>Welcome To The Jungle!</h3>

@@ -17,8 +17,6 @@ const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
     );
 };
 
-export const theme = React.createContext();
-
 export class Head extends React.Component {
 
     constructor(props) {
