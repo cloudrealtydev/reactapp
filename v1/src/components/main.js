@@ -13,8 +13,6 @@ export class Main extends React.Component {
             backdrop: false,
             show: true
         ***REMOVED***
-        this.close = this.close.bind(this);
-        this.open = this.open.bind(this);
     }
 
     nameupdate = f => {
