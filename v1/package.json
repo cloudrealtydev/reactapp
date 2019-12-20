@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@blueprintjs/icons": "^3.11.0",
+    "@blueprintjs/icons": "^3.12.0",
     "@rsuite/responsive-nav": "0.0.3",
-    "evergreen-ui": "^4.19.3",
-    "react": "^16.10.1",
+    "evergreen-ui": "^4.21.5",
+    "react": "^16.12.0",
     "react-ape": "0.0.81",
-    "react-dom": "^16.10.1",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-scripts": "3.2.0",
-    "rsuite": "^4.0.4"
+    "react-scripts": "^3.3.0",
+    "rsuite": "^4.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
