@@ -23,7 +23,7 @@ export class Main extends React.Component {
     render() {
       return (
         <div>
-          <h3>Welcome To The Jungle!</h3>
+          <h3></h3>
           <hr/>
         </div>
       );
