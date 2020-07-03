@@ -11,9 +11,13 @@ const UserSchema = new Schema({
     password: { type: String, required: true },
     email: {type: String, lowercase: [true, "All lowercase"], required: [true, "Can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
     email2: {type: String, lowercase: [true, "All lowercase"], required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
+    title: { type: String, required: true }, 
     status: { type: Boolean, required: true, default: 0 },
     role: { type: String, required: true },
-    birthday: { type: Date, required: true }
+    birthday: { type: Date, required: true },
+    social: { type: new Schema({ linkedin: String, facebook: String, instagram: String, twitter: String }), required: false },
+    address: { type: new Schema({ city: String, street: String, houseNumber: String }), required: false },
+    phone: { type: String, required: false }
 }, {timestamps: true});
 
 module.exports = User = mongoose.model("users", UserSchema);
