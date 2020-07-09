@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("body-parser-csv")(bodyParser);
 //require("body-parser-graphql")(bodyParser);
+require('./models/User');
 
 
 const app = express();
@@ -31,6 +32,8 @@ mongoose.connect(
 )
 .then(() => console.log("MongoDB successfully connected"))
 .catch(err => console.log(err));
+
+app.use(require('./routes'))
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port}!`));
