@@ -3,8 +3,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("body-parser-csv")(bodyParser);
 //require("body-parser-graphql")(bodyParser);
-require('./models/User');
-
 
 const app = express();
 
