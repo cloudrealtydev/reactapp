@@ -7,7 +7,6 @@ var secret = require('../config').secret
 //Create Schema
 const UserSchema = new Schema({
     uid: { type: Number, required: true }, //Auto Assignment
-    reco_id: { type: Number, required: [true, "If no RECO available, use last 7 digits of your phone number"] },
     firstname: { type: String, required: [true, "Can't be blank"] },
     lastname: { type: String, required: [true, "Can't be blank"] },
     username: { type: String, required: [true, "Can't be blank"], lowercase: true,  match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true },
@@ -50,7 +49,6 @@ UserSchema.methods.toAuthJSON = function(){
     return {
         token: this.generateJWT(),
         uid: this.uid,
-        reco_id: this.reco_id,
         firstname: this.firstname,
         lastname: this.lastname,
         username: this.username,
