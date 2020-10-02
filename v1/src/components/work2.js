@@ -6,7 +6,7 @@ export class Work2 extends React.Component {
 
     this.state = {
       module: null
-    ***REMOVED***
+    };
   }
  
   // after the initial render, wait for module to load

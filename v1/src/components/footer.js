@@ -8,7 +8,7 @@ export class Foot extends React.Component {
         super(props);
         this.state = {
           activeKey: '2'
-        ***REMOVED***
+        };
         this.handleSelect = this.handleSelect.bind(this);
     }
 

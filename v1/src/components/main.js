@@ -12,7 +12,7 @@ export class Main extends React.Component {
             username: "No Name",
             backdrop: false,
             show: true
-        ***REMOVED***
+        };
     }
 
     nameupdate = f => {

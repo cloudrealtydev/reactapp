@@ -13,7 +13,7 @@ class App extends React.Component {
 
     state = {
         page: '2'
-    ***REMOVED***
+    };
 
     render() {
       return (

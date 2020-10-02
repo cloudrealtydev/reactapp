@@ -26,12 +26,12 @@ const UserSchema = new Schema({
 UserSchema.methods.setPassword = function(password) {
     this.salt = crypto.randomBytes(16).toString('hex');
     this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
-***REMOVED***
+};
 
 UserSchema.methods.validPassword = function(password) {
     var hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
     return this.hash === hash;
-***REMOVED***
+};
 
 UserSchema.method.generateJWT = function() {
     var today = new Date();
@@ -43,7 +43,7 @@ UserSchema.method.generateJWT = function() {
         username: this.username,
         exp: parseInt(exp.getTime() / 1000),
     }, secret);
-***REMOVED***
+};
 
 UserSchema.methods.toAuthJSON = function(){
     return {
@@ -63,6 +63,6 @@ UserSchema.methods.toAuthJSON = function(){
         address: this.address,
         image: this.image
     }
-***REMOVED***
+};
 
 module.exports = User = mongoose.model("users", UserSchema);

@@ -16,12 +16,12 @@ export class Dark extends React.Component {
         usuccess: false,
         darkMode: false,
         username: "No Name",
-    ***REMOVED***
+    };
       
     change = e => {
         console.log(e);
         this.setState({ success: e });
-    ***REMOVED***
+    };
 
     nameupdate = f => {
         console.log(f);

@@ -15,7 +15,7 @@ const NavBarInstance = ({ onSelect, activeKey, ...props }) => {
         </Navbar.Body>
       </Navbar>
     );
-***REMOVED***
+};
 
 export class Head extends React.Component {
 
@@ -24,7 +24,7 @@ export class Head extends React.Component {
         this.state = {
           activeKey: this.props.activeKey,
           success: false
-        ***REMOVED***
+        };
         this.handleSelect = this.handleSelect.bind(this);
     }
 
@@ -34,7 +34,7 @@ export class Head extends React.Component {
 
     change = e => {
       this.setState({ success: e });
-    ***REMOVED***
+    };
 
     render() {
         const { activeKey } = this.state;
